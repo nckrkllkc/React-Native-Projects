@@ -1,5 +1,5 @@
 import React from 'react';
-import {FlatList, SafeAreaView, Text, TextInput, View, Dimensions} from 'react-native';
+import {FlatList, SafeAreaView, Text, TextInput, View} from 'react-native';
 import styles from './style';
 import Card from './src/components/Card';
 import products from './producst.json';
@@ -13,12 +13,12 @@ const App = () => {
       <Text style={styles.brand}>PATIKASTORE</Text>
       <TextInput style={styles.search} value={temp} placeholder={'Ara...'} />
       <View style={styles.flatList}>
-      <FlatList
-        data={products}
-        renderItem={renderProduct}
-        keyExtractor={getIndex}
-        numColumns={2}
-      />
+        <FlatList
+          data={products}
+          renderItem={renderProduct}
+          keyExtractor={getIndex}
+          numColumns={2}
+        />
       </View>
     </SafeAreaView>
   );
