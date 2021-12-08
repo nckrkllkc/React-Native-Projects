@@ -2,8 +2,7 @@ import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
   container: {
-      flex:1,
-    backgroundColor: 'lightgrey',
+    backgroundColor : 'white'
   },
   title: {
     fontWeight: 'bold',
@@ -11,4 +10,8 @@ export default StyleSheet.create({
     color : 'black',
     textAlign : 'center'
   },
+  separator:{
+    borderWidth : 1,
+    borderColor : 'lightgrey'
+  }
 });
