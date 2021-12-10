@@ -4,8 +4,8 @@ import styles from './Banner.style';
 const Banner = ({newsBannerData}) => {
   return (
     <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-      {newsBannerData.map(newsBanner => (
-        <Image style={styles.bannerImage} source={{uri: newsBanner.imageUrl}} />
+      {newsBannerData.map((newsBanner,index) => (
+        <Image key={index} style={styles.bannerImage} source={{uri: newsBanner.imageUrl}} />
       ))}
     </ScrollView>
   );

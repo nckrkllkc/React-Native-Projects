@@ -3,11 +3,12 @@ import {StyleSheet} from 'react-native';
 export default StyleSheet.create({
   container: {
     flex: 1,
-    padding: 5,
+    padding:5,
+    backgroundColor:'white'
   },
   brand: {
     fontSize: 30,
-    fontWeight: '700',
+    fontWeight: 'bold',
     color: '#800080',
     margin: 10,
     marginBottom: 5,
@@ -18,5 +19,8 @@ export default StyleSheet.create({
     marginBottom: 7,
     backgroundColor: '#ECEFF1',
     borderRadius: 10,
+  },
+  productContainer:{
+    flex:1
   },
 });
