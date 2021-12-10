@@ -6,8 +6,8 @@ export default StyleSheet.create({
     flexDirection: 'row',
   },
   image: {
-    width: 100,
-    height: 100,
+    width: 80,
+    height: 80,
     borderRadius: 50,
   },
   innerContainer: {
@@ -17,7 +17,7 @@ export default StyleSheet.create({
   },
   title: {
     fontWeight: 'bold',
-    fontSize: 27,
+    fontSize: 20,
     color: 'black',
   },
   contentContainer: {
@@ -38,7 +38,7 @@ export default StyleSheet.create({
   soldoutTitle: {
     color: 'red',
     fontWeight : 'bold',
-    fontSize : 12
+    fontSize : 8
   },
   soldoutContainer: {
     borderWidth: 1,
