@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-duplicate-props */
 import React, {useState} from 'react';
 import {SafeAreaView, Text, StyleSheet, Alert} from 'react-native';
 import Input from '../components/Input/Input';
