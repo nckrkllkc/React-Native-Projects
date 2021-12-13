@@ -4,7 +4,7 @@ import Button from '../components/Button';
 
 export default function WelcomeScreen(props) {
   function goToMemberSignPage() {
-      props.navigation.navigate('MemberSign')
+    props.navigation.navigate('MemberSign');
   }
   return (
     <SafeAreaView style={styles.container}>
@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     margin: 10,
     fontSize: 22,
-    fontWeight: 'bold',
+    fontFamily: 'Roboto-Black',
     color: '#212121',
   },
 });
