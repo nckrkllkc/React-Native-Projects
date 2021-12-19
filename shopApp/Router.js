@@ -7,9 +7,36 @@ export default function Router() {
   const Stack = createNativeStackNavigator();
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{headerShown: false}}>
-        <Stack.Screen name="ProductsPage" component={Products} />
-        <Stack.Screen name="DetailPage" component={Detail} />
+      <Stack.Navigator>
+        <Stack.Screen
+          name="ProductsPage"
+          component={Products}
+          options={{
+            title: 'Ürünler',
+            headerTitleAlign: 'center',
+            headerStyle: {
+              backgroundColor: '#64b5f6',
+            },
+            headerTitleStyle: {
+              color: 'white',
+            },
+          }}
+        />
+        <Stack.Screen
+          name="DetailPage"
+          component={Detail}
+          options={{
+            title: 'Ürün Detayı',
+            headerTitleAlign: 'center',
+            headerStyle: {
+              backgroundColor: '#64b5f6',
+            },
+            headerTitleStyle: {
+              color: 'white',
+            },
+            headerTintColor: 'white',
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
