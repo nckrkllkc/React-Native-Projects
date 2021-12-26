@@ -5,7 +5,7 @@ import styles from './style';
 import WeatherCard from './src/components/WeatherCard';
 export default function App() {
   const {loading, data, error} = useFetch(
-    'http://api.weatherapi.com/v1/forecast.json?key=5b5efcddd3454033878122215212412&q=Samsun&aqi=no&lang=tr',
+    'https://api.weatherapi.com/v1/forecast.json?key=5b5efcddd3454033878122215212412&q=Samsun&aqi=no&lang=tr',
   );
   if (loading) {
     console.log('Yükleniyor.');
@@ -20,6 +20,7 @@ export default function App() {
         data={data}
         renderItem={renderItem}
         keyExtractor={item => data.indexOf(item).toString()}
+        style={styles.flatlist}
       />
     </View>
   );
