@@ -1,0 +1,10 @@
+import React from 'react';
+import {View, Text} from 'react-native';
+import styles from './Categories.style';
+export default function Categories() {
+  return (
+    <View style={styles.container}>
+      <Text>Categories</Text>
+    </View>
+  );
+}
