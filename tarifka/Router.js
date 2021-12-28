@@ -1,23 +1,27 @@
 import React from 'react';
 import {SafeAreaView} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {createStackNavigator} from '@react-navigation/stack';
 import Categories from './src/pages/Categories';
 import Meals from './src/pages/Meals';
 import Detail from './src/pages/Detail';
 import styles from './style';
-const Stack = createNativeStackNavigator();
+const Stack = createStackNavigator();
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
       <NavigationContainer>
-        <Stack.Navigator>
+        <Stack.Navigator
+          screenOptions={{
+            headerBackTitleVisible: true,
+          }}>
           <Stack.Screen
             name="Categories"
             component={Categories}
             options={{
               headerTitleAlign: 'center',
               headerTitleStyle: {color: '#FFA500'},
+              headerTintColor: '#FFA500',
             }}
           />
           <Stack.Screen
@@ -26,6 +30,8 @@ export default function App() {
             options={{
               headerTitleAlign: 'center',
               headerTitleStyle: {color: '#FFA500'},
+              headerTintColor: '#FFA500',
+              headerBackTitle: 'Categories',
             }}
           />
           <Stack.Screen
@@ -34,6 +40,7 @@ export default function App() {
             options={{
               headerTitleAlign: 'center',
               headerTitleStyle: {color: '#FFA500'},
+              headerTintColor: '#FFA500',
             }}
           />
         </Stack.Navigator>
