@@ -6,14 +6,13 @@ import {
   TouchableWithoutFeedback,
 } from 'react-native';
 import styles from './MealCard.style';
-export default function MealCard({meal}) {
+export default function MealCard({meal, onSelect}) {
   let mealName = meal.strMeal;
   if (meal.strMeal.length > 22) {
     mealName = meal.strMeal.substring(0, 22) + '...';
   }
   return (
-    //TODO Yarın seçilen yemeğin tarifine gidecek bölüm yazılacak.
-    <TouchableWithoutFeedback onPress={null}>
+    <TouchableWithoutFeedback onPress={onSelect}>
       <View style={styles.container}>
         <ImageBackground
           source={{uri: meal.strMealThumb}}

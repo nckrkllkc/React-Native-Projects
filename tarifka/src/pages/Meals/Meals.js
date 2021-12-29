@@ -6,7 +6,7 @@ import Config from 'react-native-config';
 import Loading from '../../components/Loading';
 import Error from '../../components/Error';
 import MealCard from '../../components/MealCard';
-export default function Meals({route}) {
+export default function Meals({route, navigation}) {
   const url = Config.API_CATEGORY_FILTER_URL + route.params.categoryName;
   const {data, error, loading} = useFetch(url);
   if (loading) {
@@ -15,8 +15,13 @@ export default function Meals({route}) {
   if (error) {
     return <Error />;
   }
+  function handleMeal(idMeal) {
+    navigation.navigate('Detail', {idMeal});
+  }
   const meals = data.meals;
-  const renderItem = ({item}) => <MealCard meal={item} />;
+  const renderItem = ({item}) => (
+    <MealCard meal={item} onSelect={() => handleMeal(item.idMeal)} />
+  );
   return (
     <View style={styles.container}>
       <FlatList
