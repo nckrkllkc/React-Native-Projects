@@ -7,7 +7,7 @@ import useFetch from '../../hooks/useFetch';
 import styles from './Detail.style';
 export default function Detail({route}) {
   const {loading, data, error} = useFetch(
-    Config.API_URL + '/' + route.params.id.toString(),
+    Config.API_PRODUCT_URL + '/' + route.params.id.toString(),
   );
   if (loading) {
     return <Loading />;
