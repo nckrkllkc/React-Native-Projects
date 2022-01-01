@@ -9,8 +9,8 @@ export default function usePost() {
   const post = async (url, apiData) => {
     try {
       setLoading(true);
-      const {data: responseData} = await axios.post(url, apiData);
-      setData(responseData);
+      const response = await axios.post(url, apiData);
+      setData(response.data);
       setLoading(false);
     } catch (err) {
       setLoading(false);

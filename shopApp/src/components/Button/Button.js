@@ -8,7 +8,7 @@ export default function Button({text, onPress, loading}) {
       onPress={onPress}
       disabled={loading}>
       {loading ? (
-        <ActivityIndicator size={'large'} color="white" />
+        <ActivityIndicator size="large" color="white" animating={true} />
       ) : (
         <Text style={styles.title}>{text}</Text>
       )}
