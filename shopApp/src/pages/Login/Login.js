@@ -6,9 +6,10 @@ import Input from '../../components/Input';
 import styles from './Login.style';
 import usePost from '../../hooks/usePost';
 import Config from 'react-native-config';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-export default function Login({navigation}) {
+import {useDispatch} from 'react-redux';
+export default function Login() {
   const {data, loading, error, post} = usePost();
+  const dispatch = useDispatch();
 
   function handleLogin(values) {
     post(Config.API_AUTH_URL + '/login', values);
@@ -19,12 +20,10 @@ export default function Login({navigation}) {
   }
 
   if (data) {
-    console.log(data);
     if (data.status === 'Error') {
       Alert.alert('ShopApp', 'Kullanıcı bulunamadı :( ');
     } else {
-      AsyncStorage.setItem('@user', JSON.stringify(user));
-      navigation.navigate('ProductsPage', data);
+      dispatch({type: 'SET_USER', payload: {user}});
     }
   }
 
